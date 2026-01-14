@@ -1,0 +1,21 @@
+# .streamlit/config.toml
+
+# This file sets the custom theme for your Streamlit app.
+# When you run the app, Streamlit will automatically apply these settings.
+
+[theme]
+# The primary color for interactive elements like buttons, sliders, etc.
+primaryColor = "#3DD56D"
+
+# The main background color of the app.
+backgroundColor = "#0F1116"
+
+# The background color for elements like the sidebar and containers.
+secondaryBackgroundColor = "#1C1F2B"
+
+# The color for text.
+textColor = "#FFFFFF"
+
+# The font for the app.
+# Options: "sans serif", "serif", or "monospace"
+font = "sans serif"
