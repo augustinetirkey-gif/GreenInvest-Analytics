@@ -19,59 +19,28 @@ st.set_page_config(
 
 # Custom CSS for animations and styling
 st.markdown("""
-    <style>
-        /* Fade-in-up animation for the welcome banner */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .welcome-banner {
-            animation: fadeInUp 1s ease-out;
-        }
+<style>
+.stApp {
+    background-color: #ffffff;
+    color: #1b3a2f;
+}
 
-        /* Main App Background - light eco gradient */
-        .stApp {
-            background: linear-gradient(to right, #f0fff0, #e6f5d0, #e0f7fa);
-            animation: gradient 15s ease infinite;
-            background-size: 400% 400%;
-            color: #1b3a2f;
-        }
+section[data-testid="stSidebar"] {
+    background-color: #f5f5f5;
+}
 
-        @keyframes gradient {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] .stTabs [data-baseweb="tab"] {
+    color: #1b3a2f !important;
+}
 
-        /* Sidebar styling - earthy green with light text */
-        section[data-testid="stSidebar"] {
-            background: linear-gradient(to bottom, #2e7d32, #388e3c);
-        }
-        section[data-testid="stSidebar"] h1,
-        section[data-testid="stSidebar"] label,
-        section[data-testid="stSidebar"] .stTabs [data-baseweb="tab"],
-        section[data-testid="stSidebar"] .stTextInput label {
-            color: #ffffff !important;
-        }
-
-        section[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
-            font-weight: bold;
-            border-bottom: 2px solid #dcedc8;
-        }
-    </style>
+section[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
+    font-weight: bold;
+    border-bottom: 2px solid #4caf50;
+}
+</style>
 """, unsafe_allow_html=True)
-
-# Welcome banner with high contrast
-st.markdown("""
-    <div class="welcome-banner" style="text-align:center; padding: 2rem 1rem;
-            border-radius: 15px; background: linear-gradient(to right, #a5d6a7, #81d4fa);
-            color: #003300; font-size: 2.5rem; font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);">
-        🌿 Welcome to <span style="color: #1b5e20;">GreenInvest Analytics</span> — Powering Sustainable Wealth 🌱
-    </div>
-""", unsafe_allow_html=True)
-
 
 # --- DATABASE FUNCTIONS ---
 DATABASE_NAME = 'esg_data.db'
