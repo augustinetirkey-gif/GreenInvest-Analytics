@@ -19,29 +19,47 @@ st.set_page_config(
 
 # Custom CSS for animations and styling
 st.markdown("""
-<style>
-.stApp {
-    background-color: #ffffff;
-    color: #1b3a2f;
-}
+    <style>
+        /* Fade-in-up animation for the welcome banner */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .welcome-banner {
+            animation: fadeInUp 1s ease-out;
+        }
 
-section[data-testid="stSidebar"] {
-    background-color: #f5f5f5;
-}
+        /* Main App Background - light eco gradient */
+        .stApp {
+            background: linear-gradient(to right, #f0fff0, #e6f5d0, #e0f7fa);
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+            color: #1b3a2f;
+        }
 
-section[data-testid="stSidebar"] h1,
-section[data-testid="stSidebar"] label,
-section[data-testid="stSidebar"] .stTabs [data-baseweb="tab"] {
-    color: #1b3a2f !important;
-}
+        @keyframes gradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
 
-section[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
-    font-weight: bold;
-    border-bottom: 2px solid #4caf50;
-}
-</style>
+        /* Sidebar styling - earthy green with light text */
+        section[data-testid="stSidebar"] {
+            background: linear-gradient(to bottom, #2e7d32, #388e3c);
+        }
+        section[data-testid="stSidebar"] h1,
+        section[data-testid="stSidebar"] label,
+        section[data-testid="stSidebar"] .stTabs [data-baseweb="tab"],
+        section[data-testid="stSidebar"] .stTextInput label {
+            color: #ffffff !important;
+        }
+
+        section[data-testid="stSidebar"] .stTabs [aria-selected="true"] {
+            font-weight: bold;
+            border-bottom: 2px solid #dcedc8;
+        }
+    </style>
 """, unsafe_allow_html=True)
-
 # --- DATABASE FUNCTIONS ---
 DATABASE_NAME = 'esg_data.db'
 
